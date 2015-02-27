@@ -1,6 +1,6 @@
 <h1>The Times</h1>
 
-<div class="container"
+<div class="container">
   <div ng-show="BeatsFactory.beats.length" class="col-md-12">
     <form class="form-inline" role="form">
       <div class="form-group">
@@ -24,7 +24,7 @@
     <div ng-repeat="item in BeatsFactory.beats | filter:query">
       <li>
         <a ui-sref="beats.authors({ beatId: item.id })">
-        <h3>{{ item.beatTitle }} ({{ item.authors.length }} authors)</h3>
+          <h3>{{ item.beatTitle }} ({{ item.authors.length }} authors)</h3>
         </a>
       </li>
         <div ng-show="item.authors.length">
