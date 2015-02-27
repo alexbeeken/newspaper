@@ -4,4 +4,5 @@ newspaper.config(function($stateProvider) {
     url: "",
     templateUrl: "partials/beats.html",
     controller: 'BeatsCtrl'
+  });
 });

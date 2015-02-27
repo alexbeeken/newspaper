@@ -3,12 +3,11 @@ newspaper.factory('BeatsFactory', function BeatsFactory() {
   factory.beats = [];
   factory.addBeat = function() {
     factory.beats.push({
-      title: factory.beatTitle,
       id: factory.beats.length + 1,
       dateCreated: ((new Date()).toLocaleString()),
+      beatTitle: factory.beatTitle
     });
     factory.beatTitle = null;
   };
-
   return factory;
 })
