@@ -1,5 +1,17 @@
 <h1>The Times</h1>
 
+<div class="container"
+  <div ng-show="BeatsFactory.beats.length" class="col-md-12">
+    <form class="form-inline" role="form">
+      <div class="form-group">
+        <input ng-model="query" type="text" class="form-control" placeholder="Search">
+      </div>
+    </form>
+  </div>
+</div>
+
+<br>
+
 <form ng-submit="BeatsFactory.addBeat()" class="form-inline" role="form">
   <div class="form-group">
     <input type="text" ng-model="BeatsFactory.beatTitle" size="50" class="form-control" placeholder="Enter a New Beat" autofocus required>
@@ -9,7 +21,7 @@
 
 <div ng-show="BeatsFactory.beats.length" class="col-md-12">
   <ul>
-    <div ng-repeat="item in BeatsFactory.beats">
+    <div ng-repeat="item in BeatsFactory.beats | filter:query">
       <li>
         <a ui-sref="beats.authors({ beatId: item.id })">
         <h3>{{ item.beatTitle }} ({{ item.authors.length }} authors)</h3>
@@ -27,12 +39,5 @@
   </ul>
 </div>
 
-<div ng-show="BeatsFactory.beats.length" class="col-md-12">
-  <form class="form-inline" role="form">
-    <div class="form-group">
-      <input ng-model="query" type="text" class="form-control" placeholder="Search">
-    </div>
-  </form>
-</div>
 
 <div ui-view></div>
