@@ -8,7 +8,7 @@ newspaper.factory('BeatsFactory', function BeatsFactory() {
       beatTitle: factory.beatTitle,
       authors: []
     });
+    factory.beatTitle = null;
   };
-  factory.beatTitle = null;
   return factory;
 })
