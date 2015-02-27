@@ -10,9 +10,29 @@
 <div ng-show="BeatsFactory.beats.length" class="col-md-12">
   <ul>
     <div ng-repeat="item in BeatsFactory.beats">
-      <li><p>{{ item.beatsTitle }}<a ui-sref="beats.authors({ beatId: item.id })">{{ item.authors.length }} Authors</a></p></li>
+      <li>
+        <a ui-sref="beats.authors({ beatId: item.id })">
+        <h3>{{ item.beatTitle }} ({{ item.authors.length }} authors)</h3>
+        </a>
+      </li>
+        <div ng-show="item.authors.length">
+          <div ng-repeat="author in item.authors">
+          <br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          {{ author.name }} has worked here for {{ author.yearsEmployed }} years and was born on {{ author.birthday }}.
+          <br>
+        </div>
+      </div>
     </div>
   </ul>
+</div>
+
+<div ng-show="BeatsFactory.beats.length" class="col-md-12">
+  <form class="form-inline" role="form">
+    <div class="form-group">
+      <input ng-model="query" type="text" class="form-control" placeholder="Search">
+    </div>
+  </form>
 </div>
 
 <div ui-view></div>
