@@ -5,7 +5,8 @@ newspaper.factory('BeatsFactory', function BeatsFactory() {
     factory.beats.push({
       id: factory.beats.length + 1,
       dateCreated: ((new Date()).toLocaleString()),
-      beatTitle: factory.beatTitle
+      beatTitle: factory.beatTitle,
+      authors: []
     });
     factory.beatTitle = null;
   };

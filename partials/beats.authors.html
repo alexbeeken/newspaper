@@ -1,0 +1,23 @@
+<div class="col-md-12">
+  <div ng-show="beats.authors.length">
+    <ul>
+      <div ng-repeat="item in beats.authors">
+      <li>
+        {{ item.name }} has worked here for {{ item.yearsEmployed }} years and was born on {{ item.birthday }}.
+      </li>
+    </ul>
+  </div>
+
+  <div>
+    <h4>Add an author:</h4>
+    <form ng-submit="addAuthor()" class="form-inline" role="form" id="authors">
+      <div class="form-group">
+        <input type='text' ng-model="name" class="form-control" placeholder="Enter Author Name"></input>
+        <input type="text" ng-model="yearsEmployed" placeholder="Years of Employment"></input>
+        <input type="text" ng-model="birthday" placeholder="Birthday"></input>
+      </div>
+      <br>
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+  </div>
+</div>

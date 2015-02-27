@@ -10,7 +10,7 @@
 <div ng-show="beats.length" class="col-md-12">
   <ul>
     <div ng-repeat="item in beats | orderBy:'dateCreated':true">
-      <li><p>{{ item.beatTitle }}</p></li>
+      <li><p>{{ item.beatsTitle }}<a ui-sref="beats.authors({ beatId: item.id })">{{ item.authors.length }} Authors</a></p></li>
     </div>
   </ul>
 </div>
