@@ -7,9 +7,9 @@
   <button type="submit" class="btn btn-default">Submit</button>
 </form>
 
-<div ng-show="beats.length" class="col-md-12">
+<div ng-show="BeatsFactory.beats.length" class="col-md-12">
   <ul>
-    <div ng-repeat="item in beats | orderBy:'dateCreated':true">
+    <div ng-repeat="item in BeatsFactory.beats">
       <li><p>{{ item.beatsTitle }}<a ui-sref="beats.authors({ beatId: item.id })">{{ item.authors.length }} Authors</a></p></li>
     </div>
   </ul>
